@@ -1,0 +1,171 @@
+/* -----RESET E IMPORTS-----*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-main: #427092;
+    --clr-secondary: #363537;
+    --clr-accent: #E8FCCF;
+}
+
+/*-----TIPOGRAFIA-----*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 { 
+    line-height: 1.6;
+}
+
+/* -----NAVBAR----- */
+
+.navBar {
+    background-color: var(--clr-secondary);
+    color: #FFF;
+    position: fixed;
+    width: 100%;
+}
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    padding-block: 1rem;
+}
+
+li {
+    margin-inline: 1rem;
+}
+li > a {
+    text-decoration: none;
+    color: var(--clr-accent);
+}
+li > a:hover {
+    color: var(--clr-main);
+}
+
+/* -----HERO----- */
+
+.hero {
+    background-image: url(../images/hero.jpg);
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+    background-color:#427092;
+}
+
+.heroText {
+    color: var(--clr-accent);
+    padding-block-start: 30%;
+    text-align: left;
+    margin-inline: 5%;
+    font-size: 3rem;
+}
+.heroTagline {
+    color: var(--clr-accent);
+    text-align: left;
+    margin-block-start: 1rem;
+    margin-inline-start: 5%;
+    margin-inline-end: 20%;
+    font-size: 1.3ch;
+}
+
+/* -----MAIN CARDS----- */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-block-start: 3rem;
+}
+
+.card {
+    width: 15rem;
+    background-color: var(--clr-secondary);
+    border-radius: 0.5rem;
+    padding-block-end: 2rem;
+    box-shadow:  3px 3px 20px  rgba(0,0,0, 0.15);
+}
+.card__image {
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card__title,
+.card__text {
+    margin-block: 0.5rem;
+    padding-inline: 1rem;
+    color: var(--clr-accent);
+}
+
+button {
+    padding-inline: 1.2rem;
+    padding-block: 0.8rem;
+    margin-block-start: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(0,0,0, 0.15);
+    border: none;
+    background-color: var(--clr-main);
+    color: var(--clr-accent);
+}
+
+button:hover,
+button:focus {
+    background-color: var(--clr-accent);
+    color: var(--clr-secondary);
+}
+
+/* -----CALCULADORA----- */
+.calculadora {
+    margin-block-start: 10%;
+    padding-block: 5%;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    background-color: var(--clr-main);
+}
+
+.btn-calc {
+    background-color: var(--clr-secondary);
+}
+
+.calculadora__sub {
+    margin-block-start: 2rem;
+}
+
+.calculadora__explicacion {
+    margin-inline: 25%;
+}
+
+footer {
+    background-color: var(--clr-secondary);
+    color: var(--clr-accent);
+    padding-block: 1rem;
+}
+
+
+/* -----MEDIA----- */
+
+@media only screen and (min-width: 600px) {
+    .cards {
+        flex-direction: row;
+        flex: 0 1 100%;
+       
+    }
+}
