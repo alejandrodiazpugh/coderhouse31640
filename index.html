@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>SmartLift</title>
+    <title>SmartLift Calculadora</title>
 </head>
 <body>
     <nav class="navBar">
@@ -13,6 +13,7 @@
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Nuestros Servicios</a></li>
+            <li><a href="#">Dashboard</a></li>
             <li><a href="#">Carrito</a></li>
         </ul>
     </nav>
@@ -26,25 +27,25 @@
                 <img class="card__image" src="./images/card1.jpg" alt="mujer corriendo en un atardecer">
                 <h4 class="card__title" lang="en">COUCH TO 5K</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="nuevoUsuarioCorrer()">Ver más</button>
+                <button onclick="agregarCliente('Couch to 5K')">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card2.jpg" alt="tres mujeres en una clase de yoga">
                 <h4 class="card__title" lang="hi">HATHA YOGA</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="nuevoUsuarioYoga()">Ver más</button>
+                <button onclick="agregarCliente('Hatha Yoga')">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card3.jpg" alt=" acercamiento del brazo de un hombre haciendo pesas ">
                 <h4 class="card__title" lang="en">BORING BUT BIG</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="nuevoUsuarioPesas()">Ver más</button>
+                <button onclick="agregarCliente('Boring But Big')">Ver más</button>
             </div>
         </div>
         <div class="calculadora">
             <h2>LA CALCULADORA DE EJERCICIO MÁS SENCILLA QUE USARÁS</h2>
             <p>Tan solo ingresa el peso que levantas en tus sets regulares y te diremos tu ORM.</p>
-            <button class="btn-calc" onclick="promptUsuario()">Inténtalo</button>
+            <button class="btn-calc" onclick="calculadoraOneRepMax()">Inténtalo</button>
             <h4 class="calculadora__sub">¿CÓMO FUNCIONA?</h4>
             <p class="calculadora__explicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quasi eum itaque culpa temporibus ipsa, facilis inventore saepe laboriosam ut, quam enim suscipit assumenda voluptate, est soluta eius accusamus neque!</p>
         </div>
