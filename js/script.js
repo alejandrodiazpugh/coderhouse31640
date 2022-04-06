@@ -20,11 +20,13 @@ class Cliente {
 //Pasamos la clase por una función que agrega objetos al array de usuarios con el botón
 
 function agregarCliente(curso) {
-   let usuario = prompt("Introduce tu nombre por favor:");
-    if(((usuario !== null) || (usuario !=="")) && (CURSOS.includes(curso))) {
+    let usuario = prompt("Introduce tu nombre por favor:");
+    if(usuario !== null && usuario !== "") {
        USUARIOS_PROGRAMAS.push(new Cliente(usuario,curso));
        alert(`Gracias ${usuario}, nos pondrémos en contacto contigo pronto para revisar los siguientes pasos del proceso`);
-    } else {alert("Por favor vuelva a intentarlo con un nombre válido")}
+    } else {
+        alert("Por favor introduce un nombre válido");
+    } 
 }
 
 
