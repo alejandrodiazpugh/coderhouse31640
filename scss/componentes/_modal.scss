@@ -1,0 +1,56 @@
+@use "../abstracts/" as a;
+
+
+.modal {
+    display: grid;
+    grid-template-columns: 2;
+    gap: 1rem;
+    background-color: a.$clrSecondary;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    z-index: 1;
+    position: fixed;
+    place-items: center;
+    align-items: center;
+    border: none;
+
+    &__image {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        margin-inline-start: 1rem;
+        margin-block-start: 1rem;
+        border-radius: 0.5rem;
+    }
+    &__title {
+        margin-block: 1rem;
+        margin-inline: auto;
+        grid-column: 2;
+        color: a.$clrAccent;
+    }
+    &__text {
+        margin-block: 1rem;
+        margin-inline: 2rem;
+        color: a.$clrAccent;
+        grid-row: span 2;
+    }
+    &__cerrar {
+        text-decoration: underline;
+        grid-row: 4;
+        grid-column: 1 / span 2;
+        font-size: 0.8rem;
+        color: a.$clrAccent;
+        margin-block-end: 1rem;
+        cursor: pointer;
+    }
+    &__cerrar:hover {
+        color: a.$clrMain;
+    }
+}
+
+modal::backdrop {
+    background-color: a.$clrMain;
+    opacity: 0.5;
+}

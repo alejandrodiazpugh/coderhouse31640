@@ -1,0 +1,23 @@
+@use "../abstracts" as a;
+
+.calculadora {
+    margin-block-start: 10%;
+    padding-block: 5%;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    background-color: a.$clrMain;
+
+    &__sub {
+        margin-block-start: 2rem;
+    }
+    
+    &__explicacion {
+        margin-inline: 25%;
+    }
+}
+
+.btn-calc {
+    background-color: a.$clrSecondary;
+}
+

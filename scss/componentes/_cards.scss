@@ -1,0 +1,48 @@
+@use "../abstracts" as a;
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-block-start: 3rem;
+
+    .card {
+        width: 15rem;
+        background-color: a.$clrSecondary;
+        border-radius: 0.5rem;
+        padding-block-end: 2rem;
+        box-shadow:  3px 3px 20px  rgba(0,0,0, 0.15);
+
+        &__image {
+            width: 100%;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        
+        &__title,
+        &__text {
+            margin-block: 0.5rem;
+            padding-inline: 1rem;
+            color: a.$clrAccent;
+        }
+    }
+}
+
+button {
+    padding-inline: 1.2rem;
+    padding-block: 0.8rem;
+    margin-block-start: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(0,0,0, 0.15);
+    border: none;
+    background-color: a.$clrMain;
+    color: a.$clrAccent;
+    &:hover,
+    &:focus {
+    background-color: a.$clrAccent;
+    color: a.$clrSecondary;
+}
+}
+

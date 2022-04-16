@@ -1,0 +1,7 @@
+@use "../abstracts" as a;
+
+footer {
+    background-color: a.$clrSecondary;
+    color: a.$clrAccent;
+    padding-block: 1rem;
+}

@@ -1,0 +1,27 @@
+@use "../abstracts" as a;
+
+.navBar {
+    background-color: a.$clrSecondary;
+    color: #FFF;
+    position: fixed;
+    width: 100%;
+    ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end;
+        padding-block: 1rem;
+        li {
+            margin-inline: 1rem;
+            a {
+                text-decoration: none;
+                color: a.$clrAccent;
+            }
+            a:hover {
+                color: a.$clrMain;
+            }
+        }
+    }
+}
+
+
+

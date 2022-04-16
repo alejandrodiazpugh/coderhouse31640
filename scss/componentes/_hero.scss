@@ -1,0 +1,26 @@
+@use "../abstracts/" as a;
+
+.hero {
+    background-image: url(../images/hero.jpg);
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+    background-color: a.$clrMain;
+
+    &Text {
+        color: a.$clrAccent;
+        padding-block-start: 30%;
+        text-align: left;
+        margin-inline: 5%;
+        font-size: 3rem;
+    }
+    &Tagline {
+        color: a.$clrAccent;
+        text-align: left;
+        margin-block-start: 1rem;
+        margin-inline-start: 5%;
+        margin-inline-end: 20%;
+        font-size: 1.3ch;
+    }
+}
+

@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>SmartLift Calculadora</title>
+    <title>SmartLift</title>
 </head>
 <body>
     <nav class="navBar">
         <div class="logo"></div>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nuestros Servicios</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Carrito</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./pages/misEjercicios.html">Mis Ejercicios</a></li>
+            <li><a href="./pages/carrito.html">Carrito</a></li>
         </ul>
     </nav>
     <main>
@@ -27,25 +26,66 @@
                 <img class="card__image" src="./images/card1.jpg" alt="mujer corriendo en un atardecer">
                 <h4 class="card__title" lang="en">COUCH TO 5K</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="agregarCliente('Couch to 5K')">Ver más</button>
+                <button id="correr">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card2.jpg" alt="tres mujeres en una clase de yoga">
                 <h4 class="card__title" lang="hi">HATHA YOGA</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="agregarCliente('Hatha Yoga')">Ver más</button>
+                <button id="yoga">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card3.jpg" alt=" acercamiento del brazo de un hombre haciendo pesas ">
                 <h4 class="card__title" lang="en">BORING BUT BIG</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button onclick="agregarCliente('Boring But Big')">Ver más</button>
+                <button id="pesas">Ver más</button>
             </div>
         </div>
+        <dialog class="modal" id="correr__modal">
+            <img class="modal__image" src="./images/card1.jpg" alt="">
+            <h3 class="modal__title">COUCH TO 5K</h3>
+            <p class="modal__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores delectus ea porro quisquam quod quo in iure modi illum excepturi a voluptatibus dolore, itaque quis necessitatibus maiores dolorem rerum omnis beatae error nisi laudantium placeat? Eveniet rem libero illo accusamus, quis quo id ad, cum aspernatur at asperiores nisi amet repudiandae architecto velit. Magnam accusantium libero architecto. Itaque natus esse laboriosam neque commodi dolores hic! Esse suscipit sapiente ipsam fugiat.</p>
+            <p class="modal__cerrar" id="correr__cerrar">Cerrar</p>
+        </dialog>
+        <dialog class="modal" id="yoga__modal">
+            <img class="modal__image" src="./images/card2.jpg" alt="">
+            <h3 class="modal__title">HATHA YOGA</h3>
+            <p class="modal__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur non obcaecati cupiditate odit beatae distinctio molestiae cum dignissimos quisquam facilis animi ratione eligendi pariatur repudiandae placeat molestias asperiores fuga aperiam ex ipsa nostrum, velit accusantium aspernatur corrupti! Corporis vel dignissimos, explicabo excepturi incidunt numquam maiores autem quam totam adipisci qui.</p>
+            <p class="modal__cerrar" id="yoga__cerrar">Cerrar</p>
+        </dialog>
+        <dialog class="modal" id="pesas__modal">
+            <img class="modal__image" src="./images/card3.jpg" alt="">
+            <h3 class="modal__title">BORING BUT BIG</h3>
+            <p class="modal__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur non obcaecati cupiditate odit beatae distinctio molestiae cum dignissimos quisquam facilis animi ratione eligendi pariatur repudiandae placeat molestias asperiores fuga aperiam ex ipsa nostrum, velit accusantium aspernatur corrupti! Corporis vel dignissimos, explicabo excepturi incidunt numquam maiores autem quam totam adipisci qui.</p>
+            <p class="modal__cerrar " id="pesas__cerrar">Cerrar</p>
+        </dialog>
+        
+       
         <div class="calculadora">
             <h2>LA CALCULADORA DE EJERCICIO MÁS SENCILLA QUE USARÁS</h2>
             <p>Tan solo ingresa el peso que levantas en tus sets regulares y te diremos tu ORM.</p>
-            <button class="btn-calc" onclick="calculadoraOneRepMax()">Inténtalo</button>
+            <div class="notificaciones">
+                <form action="" enctype="text/plain">
+                    <div class="contenedor">
+                        <select name="ejercicios" id="notificaciones__ejercicios">
+                            <option value="disabled" disabled selected>Selecciona ejercicio:</option>
+                            <option value="squat">Barbell Squat</option>
+                            <option value="benchPress">Bench Press</option>
+                            <option value="deadlift">Deadlift</option>
+                            <option value="militaryPress">Military Press</option>
+                        </select>
+                    </div>
+                    <div class="contenedor">
+                        <label for="Repeticiones">Número de Repeticiones:</label>
+                        <input type="number" name="repeticiones" id="notificaciones__repeticiones">
+                    </div>
+                    <div class="contenedor">
+                        <label for="peso">Peso en KG:</label>
+                        <input type="number" name="peso" id="notificaciones__peso">
+                    </div>
+                </form>
+            </div>
+            <button class="btn-calc" id="ORMCalculator">Inténtalo</button>
             <h4 class="calculadora__sub">¿CÓMO FUNCIONA?</h4>
             <p class="calculadora__explicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quasi eum itaque culpa temporibus ipsa, facilis inventore saepe laboriosam ut, quam enim suscipit assumenda voluptate, est soluta eius accusamus neque!</p>
         </div>
@@ -57,9 +97,6 @@
             <p class="contacto__telefono">Tel. 55 5555 5555</p>
         </div>
     </footer>
-    
-
- 
     <script src="./js/script.js"></script> 
 </body>
 </html>
