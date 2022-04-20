@@ -10,10 +10,10 @@
 <body>
     <nav class="navBar">
         <div class="logo"></div>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="./pages/misEjercicios.html">Mis Ejercicios</a></li>
-            <li><a href="./pages/carrito.html">Carrito</a></li>
+        <ul class="menu">
+            <li class="menu__item"><a href="index.html">Inicio</a></li>
+            <li class="menu__item"><a href="./pages/misEjercicios.html">Mis Ejercicios</a></li>
+            <li class="menu__item"><a href="./pages/carrito.html">Carrito</a></li>
         </ul>
     </nav>
     <main>
@@ -26,19 +26,19 @@
                 <img class="card__image" src="./images/card1.jpg" alt="mujer corriendo en un atardecer">
                 <h4 class="card__title" lang="en">COUCH TO 5K</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button id="correr">Ver más</button>
+                <button class="card__button" id="correr">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card2.jpg" alt="tres mujeres en una clase de yoga">
                 <h4 class="card__title" lang="hi">HATHA YOGA</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button id="yoga">Ver más</button>
+                <button class="card__button" id="yoga">Ver más</button>
             </div>
             <div class="card">
                 <img class="card__image" src="./images/card3.jpg" alt=" acercamiento del brazo de un hombre haciendo pesas ">
                 <h4 class="card__title" lang="en">BORING BUT BIG</h4>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, omnis!</p>
-                <button id="pesas">Ver más</button>
+                <button class="card__button" id="pesas">Ver más</button>
             </div>
         </div>
         <dialog class="modal" id="correr__modal">
@@ -59,8 +59,6 @@
             <p class="modal__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur non obcaecati cupiditate odit beatae distinctio molestiae cum dignissimos quisquam facilis animi ratione eligendi pariatur repudiandae placeat molestias asperiores fuga aperiam ex ipsa nostrum, velit accusantium aspernatur corrupti! Corporis vel dignissimos, explicabo excepturi incidunt numquam maiores autem quam totam adipisci qui.</p>
             <p class="modal__cerrar " id="pesas__cerrar">Cerrar</p>
         </dialog>
-        
-       
         <div class="calculadora">
             <h2>LA CALCULADORA DE EJERCICIO MÁS SENCILLA QUE USARÁS</h2>
             <p>Tan solo ingresa el peso que levantas en tus sets regulares y te diremos tu ORM.</p>
@@ -69,10 +67,10 @@
                     <div class="contenedor">
                         <select name="ejercicios" id="notificaciones__ejercicios">
                             <option value="disabled" disabled selected>Selecciona ejercicio:</option>
-                            <option value="squat">Barbell Squat</option>
-                            <option value="benchPress">Bench Press</option>
-                            <option value="deadlift">Deadlift</option>
-                            <option value="militaryPress">Military Press</option>
+                            <option value="Barbell Squat">Barbell Squat</option>
+                            <option value="Bench Press">Bench Press</option>
+                            <option value="Deadlift">Deadlift</option>
+                            <option value="Military Press">Military Press</option>
                         </select>
                     </div>
                     <div class="contenedor">
@@ -83,9 +81,11 @@
                         <label for="peso">Peso en KG:</label>
                         <input type="number" name="peso" id="notificaciones__peso">
                     </div>
+                    <button type="button" value="Inténtalo" class="btn-calc" id="calculadora__boton">Inténtalo</button>
                 </form>
             </div>
-            <button class="btn-calc" id="ORMCalculator">Inténtalo</button>
+            <div id="calculadora__resultado">
+            </div>
             <h4 class="calculadora__sub">¿CÓMO FUNCIONA?</h4>
             <p class="calculadora__explicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quasi eum itaque culpa temporibus ipsa, facilis inventore saepe laboriosam ut, quam enim suscipit assumenda voluptate, est soluta eius accusamus neque!</p>
         </div>

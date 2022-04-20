@@ -29,6 +29,9 @@ h6 {
   gap: 1rem;
   background-color: #427092;
 }
+.calculadora__resultado {
+  margin-inline: auto;
+}
 .calculadora__sub {
   margin-block-start: 2rem;
 }
@@ -65,7 +68,7 @@ h6 {
   color: #E8FCCF;
 }
 
-button {
+.card__button {
   padding-inline: 1.2rem;
   padding-block: 0.8rem;
   margin-block-start: 1rem;
@@ -76,7 +79,7 @@ button {
   background-color: #427092;
   color: #E8FCCF;
 }
-button:hover, button:focus {
+.card__button:hover, .card__button:focus {
   background-color: #E8FCCF;
   color: #363537;
 }

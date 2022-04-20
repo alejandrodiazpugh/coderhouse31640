@@ -19,25 +19,33 @@ class Cliente {
 
 // TODO: FORMULARIO COMPLETO QUE AGREGUE DATOS AL ARRAY CON EL LOCAL STORAGE
 
-// CALCULADORA DE MAXIMO PESO EN UNA REPETICIÓN AL LEVANTAR PESAS (1RM - 1 REP MAX) -- ARREGLAR
-
-function calculadoraOneRepMax(calculadora) {
-    let calculator = document.querySelector(calculadora);
-    let ejercicio = document.querySelector("#notificaciones__ejercicios").value;
-    let reps = parseFloat(document.querySelector("#notificaciones__repeticiones").value);
-    let peso = parseFloat(document.querySelector("#notificaciones__peso").value);
-    calculator.addEventListener("click", () => {
-           let maxPeso = Math.round(peso / (1.0278 - 0.0278 * reps));
-           let mensaje = document.createElement("p");
-           mensaje.innerHTML = `<p> Tu peso máximo para ${ejercicio} es de ${maxPeso} kg.</p>`
-           document.body.appendChild(mensaje);
-    })
+// CALCULADORA DE MAXIMO PESO EN UNA REPETICIÓN AL LEVANTAR PESAS (1RM - 1 REP MAX)
+function calculadoraOneRepMax() {
+    const calculator = document.querySelector("#calculadora__boton");
+    const ejercicio = document.querySelector("#notificaciones__ejercicios");
+    const reps = document.querySelector("#notificaciones__repeticiones");
+    const peso = document.querySelector("#notificaciones__peso");
+    if(calculator) {
+        calculator.addEventListener("click", () => {
+            const maxPeso = Math.round(peso.value / (1.0278 - 0.0278 * reps.value));
+            const mensaje = document.querySelector("#calculadora__resultado");
+            if(mensaje.childNodes.length === 0) {
+                const parrafo = document.createTextNode('p');
+                parrafo.textContent = `Tu peso máximo para ${ejercicio.value} es de ${maxPeso} kg.`;
+                mensaje.appendChild(parrafo);
+            } else {
+                mensaje.removeChild(mensaje.lastChild);
+                const parrafo = document.createTextNode('p');
+                parrafo.textContent = `Tu peso máximo para ${ejercicio.value} es de ${maxPeso} kg.`;
+                mensaje.appendChild(parrafo);
+            }
+        })
+    }   
 }
 
-calculadoraOneRepMax("#ORMCalculator");
+calculadoraOneRepMax();
 
-
-// MODALES CON MAS INFORMACIÓN
+// MODALES CON MAS INFORMACIÓN DE LOS CURSOS
 
 function modalOpen(openId, modalId) {
     const opener = document.querySelector(openId);
@@ -62,4 +70,7 @@ modalClose("#yoga__cerrar","#yoga__modal");
 
 modalOpen("#pesas","#pesas__modal");
 modalClose("#pesas__cerrar","#pesas__modal");
+
+
+// Menú de hamburguesa para movil
 

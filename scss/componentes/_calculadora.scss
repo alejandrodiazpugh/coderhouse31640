@@ -8,6 +8,10 @@
     gap: 1rem;
     background-color: a.$clrMain;
 
+    &__resultado {
+        margin-inline: auto;
+    }
+
     &__sub {
         margin-block-start: 2rem;
     }
