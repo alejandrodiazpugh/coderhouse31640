@@ -1,24 +1,3 @@
-const USUARIOS_PROGRAMAS = [];
-const CURSOS = [];
-
-//Cargamos los cursos actuales y dejamos espacio para más oferta de cursos a futuro.
-nuevoCurso = (entrada) => CURSOS.push(entrada);
-nuevoCurso("Couch to 5K");
-nuevoCurso("Hatha Yoga");
-nuevoCurso("Boring But Big");
-
-//Creamos la lista de clientes por objetos.
-class Cliente {
-    constructor(nombre, apellido, correo, curso) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.curso = curso;
-    } 
-}  
-
-// TODO: FORMULARIO COMPLETO QUE AGREGUE DATOS AL ARRAY CON EL LOCAL STORAGE
-
 // CALCULADORA DE MAXIMO PESO EN UNA REPETICIÓN AL LEVANTAR PESAS (1RM - 1 REP MAX)
 function calculadoraOneRepMax() {
     const calculator = document.querySelector("#calculadora__boton");
@@ -70,7 +49,3 @@ modalClose("#yoga__cerrar","#yoga__modal");
 
 modalOpen("#pesas","#pesas__modal");
 modalClose("#pesas__cerrar","#pesas__modal");
-
-
-// Menú de hamburguesa para movil
-

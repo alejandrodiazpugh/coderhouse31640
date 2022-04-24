@@ -16,7 +16,7 @@
 
     &__image {
         grid-column: 1;
-        grid-row: 1 / span 3;
+        grid-row: 1 / span 4;
         align-self: center;
         justify-self: center;
         width: 100%;
@@ -38,7 +38,7 @@
     }
     &__cerrar {
         text-decoration: underline;
-        grid-row: 4;
+        grid-row: 6;
         grid-column: 1 / span 2;
         font-size: 0.8rem;
         color: a.$clrAccent;

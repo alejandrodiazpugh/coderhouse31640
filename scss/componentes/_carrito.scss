@@ -1,0 +1,109 @@
+@use "../abstracts/" as a;
+
+.header {
+    padding-block-start: 60px;
+    text-align: left;
+    &__tienda {
+        margin-inline: 1rem;
+    }
+}
+
+.totales {
+display: flex;
+justify-content: space-between;
+padding-inline: 1rem;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__eliminar {
+        border: 2px solid a.$clrSecondary;
+        border-radius: 0.7rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    &__eliminar:hover,
+    &__eliminar:focus {
+        background-color: a.$clrSecondary;
+        color: a.$clrAccent;
+    }
+    &__mover {
+        border: 2px solid a.$clrMain;
+        border-radius: 0.7rem;
+        background-color: a.$clrMain;
+        padding: 0.5rem;
+        color: a.$clrAccent;
+        cursor: pointer;
+
+    }
+    &__mover:hover,
+    &__mover:focus {
+        color: a.$clrSecondary;
+        background-color: a.$clrAccent;
+    }
+}
+
+.productos {
+    width: 100%;
+   &__card {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       place-items: center;
+       border-radius: 0.5rem;
+       background-color: a.$clrSecondary;
+       margin-block: 2rem;
+       margin-inline: 5rem;
+   }
+   &__image {
+       grid-column: 1;
+       grid-row: 1 / span 2;
+       width: 100%;
+       border-radius: 0.5rem;
+   }
+   &__titulo {
+       grid-column: 2 / span 2;
+       color: a.$clrAccent;
+   }
+   &__precio {
+       color: a.$clrAccent;
+       font-size: 1.8ch;
+       font-weight: 300;
+       align-self: center;
+   }
+}
+
+.carrito__vacio {
+    margin-block: 2rem;
+}
+
+.carrito__columnas {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    margin-block-start: 2rem;
+    margin-block-end: 1rem;
+    border-bottom: 1px solid a.$clrMain;
+    margin-inline: 1%;
+    .columnas__item {
+        margin-block-start: 1rem;
+        font-weight: 500;
+    }
+}
+
+
+.enCarrito__lista {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    margin-inline-start: 12rem;
+    margin-inline-end: 5rem;
+}
+.enCarrito__producto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}

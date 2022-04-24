@@ -23,5 +23,10 @@
 
 .btn-calc {
     background-color: a.$clrSecondary;
+    color: a.$clrAccent;
+    border-radius: .5rem;
+    padding-block: 1rem;
+    padding-inline: 1.3rem;
+    margin-inline-start: .6rem;
 }
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>SmartLift - Tienda</title>
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navBar">
+        <div class="logo"></div>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./misEjercicios.html">Mis Ejercicios</a></li>
+            <li><a href="./carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="header">
+            <h2 class="header__tienda">Tienda</h2>
+        </div>
+        <div class="productos">
+            <div class="productos__card">
+                <img class="productos__image"src="../images/card1.jpg" alt="" srcset="">
+                <h4 class="productos__titulo">Couch To 5K</h4>
+                <h6 class="productos__precio" id="precio--correr"></h6>
+                <button type="button" class="card__button" id="carrito--correr">Agregar al carrito</button>
+            </div>
+            <div class="productos__card">
+                <img class="productos__image"src="../images/card2.jpg" alt="" srcset="">
+                <h4 class="productos__titulo">Hatha Yoga</h4>
+                <h6 class="productos__precio" id="precio--yoga"></h6>
+                <button type="button" class="card__button" id="carrito--yoga">Agregar al carrito</button>
+            </div>
+            <div class="productos__card">
+                <img class="productos__image"src="../images/card3.jpg" alt="" srcset="">
+                <h4 class="productos__titulo">Boring But Big</h4>
+                <h6 class="productos__precio" id="precio--pesas"></h6>
+                <button type="button" class="card__button" id="carrito--pesas">Agregar al carrito</button>
+            </div>
+        </div>
+        <div class="totales">
+            <h3 class="totales__titulo">Carrito:</h3>
+            <div class="totales__wrapper">
+                <div class="totales__eliminar">Eliminar Todo</div>
+                <div class="totales__mover">Mover a Wishlist</div>
+            </div>
+        </div>
+        <div class="carrito--template">
+            <ul class="carrito__columnas">
+                <li class="columnas__item">Producto</li>
+                <li class="columnas__item">Precio</li>
+                <li class="columnas__item">Cantidad</li>
+            </ul>
+        </div>
+        <div class="carrito">
+            <p class="vacio__texto">Parece que no hay nada aquí...</p>
+        </div>
+        <div class="enCarrito">
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contacto">
+            <h5 class="contacto__title">¡Envíanos un mensaje!</h5>
+            <p class="contacto__datos">correo@correo.com</p>
+            <p class="contacto__telefono">Tel. 55 5555 5555</p>
+        </div>
+    </footer>
+    <script src="../js/carrito.js"></script> 
+</body>
+</html>
