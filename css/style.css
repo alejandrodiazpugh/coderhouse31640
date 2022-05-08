@@ -253,27 +253,27 @@ modal::backdrop {
   margin-inline: 1rem;
 }
 
-.totales {
+.carritoHeader {
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem;
 }
-.totales__wrapper {
+.carritoHeader__wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.totales__eliminar {
+.carritoHeader__eliminar {
   border: 2px solid #363537;
   border-radius: 0.7rem;
   padding: 0.5rem;
   cursor: pointer;
 }
-.totales__eliminar:hover, .totales__eliminar:focus {
+.carritoHeader__eliminar:hover, .carritoHeader__eliminar:focus {
   background-color: #363537;
   color: #E8FCCF;
 }
-.totales__mover {
+.carritoHeader__mover {
   border: 2px solid #427092;
   border-radius: 0.7rem;
   background-color: #427092;
@@ -281,7 +281,7 @@ modal::backdrop {
   color: #E8FCCF;
   cursor: pointer;
 }
-.totales__mover:hover, .totales__mover:focus {
+.carritoHeader__mover:hover, .carritoHeader__mover:focus {
   color: #363537;
   background-color: #E8FCCF;
 }
@@ -319,35 +319,44 @@ modal::backdrop {
   margin-block: 2rem;
 }
 
-.carrito__columnas {
+.carritoRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #427092;
+  margin-block-end: 1rem;
+  padding-block-end: 0.5rem;
+}
+.carritoRow__columnas {
   display: flex;
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
+  gap: 10rem;
   margin-block-start: 2rem;
   margin-block-end: 1rem;
-  border-bottom: 1px solid #427092;
   margin-inline: 1%;
 }
-.carrito__columnas .columnas__item {
+.carritoRow__columnas .columnas__item {
   margin-block-start: 1rem;
   font-weight: 500;
 }
-
-.enCarrito__lista {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  justify-content: space-between;
-  margin-inline-start: 12rem;
-  margin-inline-end: 5rem;
+.carritoRow__img {
+  width: 100px;
+  border-radius: 0.5rem;
 }
-
-.enCarrito__producto {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
+.carritoRow__cantidad {
+  width: 2rem;
+}
+.carritoRow__eliminar {
+  border: 2px solid #363537;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.carritoRow__eliminar:hover, .carritoRow__eliminar:focus {
+  background-color: #363537;
+  color: #E8FCCF;
 }
 
 @media only screen and (min-width: 600px) {

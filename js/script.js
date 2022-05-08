@@ -49,3 +49,26 @@ modalClose("#yoga__cerrar","#yoga__modal");
 
 modalOpen("#pesas","#pesas__modal");
 modalClose("#pesas__cerrar","#pesas__modal");
+
+// AJAX
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(res => {
+    console.log(res.body);
+    res.json().then(users => {
+        console.log(users);
+        const seccionTestimonios = document.querySelector(`.testimonies`);
+        for (let i = 0; i < 5; i++) {
+            const user = users[i];
+            const newCard = document.createElement("div");
+            newCard.classList.add("card");
+            const contentNewCard = `
+                <h4 class="card__title" lang="en">${user.name}</h4>
+                <h5 class="card__title" lang="en">${user.website}</h5>
+                <p class="card__text">Me sirvio mucho esta paragina para ${user.company.catchPhrase}</p>`;
+            newCard.innerHTML = contentNewCard;
+            seccionTestimonios.append(newCard);
+        }
+    });
+})
+.catch(err => console.log("error ajax", err));
