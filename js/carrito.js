@@ -83,6 +83,7 @@ function agregarAlCarrito(imagen,programa,precio) {
         <input type="number" name="cantidad" class="carritoRow__cantidad" value="1">
         <button id="eliminar${rows_carrito}" type="button" class="carritoRow__eliminar">Eliminar</button>`;
     newRow.innerHTML = contentNewRow;
+    localStorage.setItem("contenido de carrito:",  contentNewRow);
     carrito.append(newRow);
     quitarTextoVacio();
     // Agregar function de borrar al boton de Eliminar

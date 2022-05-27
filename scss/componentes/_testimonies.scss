@@ -1,0 +1,15 @@
+@use "../abstracts" as a;
+
+.testimonies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-inline: 0.6rem;
+    .card--alt {
+        display: flex;
+        flex-direction: column;
+        background-color: a.$clrSecondary;
+        border-radius: 0.5rem;
+        gap: 0.5rem;
+    }
+}

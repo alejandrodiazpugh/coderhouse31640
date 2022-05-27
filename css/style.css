@@ -257,6 +257,7 @@ modal::backdrop {
   display: flex;
   justify-content: space-between;
   padding-inline: 1rem;
+  margin-bottom: 2rem;
 }
 .carritoHeader__wrapper {
   display: flex;
@@ -357,6 +358,20 @@ modal::backdrop {
 .carritoRow__eliminar:hover, .carritoRow__eliminar:focus {
   background-color: #363537;
   color: #E8FCCF;
+}
+
+.testimonies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-inline: 0.6rem;
+}
+.testimonies .card--alt {
+  display: flex;
+  flex-direction: column;
+  background-color: #363537;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
 }
 
 @media only screen and (min-width: 600px) {

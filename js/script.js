@@ -61,11 +61,11 @@ fetch("https://jsonplaceholder.typicode.com/users")
         for (let i = 0; i < 5; i++) {
             const user = users[i];
             const newCard = document.createElement("div");
-            newCard.classList.add("card");
+            newCard.classList.add("card--alt");
             const contentNewCard = `
                 <h4 class="card__title" lang="en">${user.name}</h4>
                 <h5 class="card__title" lang="en">${user.website}</h5>
-                <p class="card__text">Me sirvio mucho esta paragina para ${user.company.catchPhrase}</p>`;
+                <p class="card__text">Me sirvio mucho esta página para ${user.company.catchPhrase}</p>`;
             newCard.innerHTML = contentNewCard;
             seccionTestimonios.append(newCard);
         }
