@@ -360,6 +360,15 @@ modal::backdrop {
   color: #E8FCCF;
 }
 
+.carrito {
+  display: grid;
+}
+.carrito .total {
+  place-self: start;
+  margin-inline-start: 1rem;
+  margin-block-end: 2rem;
+}
+
 .testimonies {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

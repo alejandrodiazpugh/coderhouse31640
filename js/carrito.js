@@ -42,9 +42,10 @@ function agregarTextoVacio() {
 function eliminarDeCarrito(evento) {
     const botonClick = evento.target;
     botonClick.parentElement.remove();
-    if (!carrito.getElementsByClassName("carritoRow__texto--vacio")[0]) {
+    if(!document.querySelector(".itemRow")) {
         agregarTextoVacio();
     }
+  
 }
 
 function eliminarTodo() {
@@ -57,6 +58,7 @@ function eliminarTodo() {
         if (!carrito.getElementsByClassName("carritoRow__texto--vacio")[0]) {
             agregarTextoVacio();
         }
+        document.querySelector(".total").innerHTML = "";
     })
 }
 
@@ -66,30 +68,63 @@ function clickParaAgregar(evento) {
         const imgDePrograma = elementoAComprar.querySelector(".productos__image").src;
         const nombreDePrograma = elementoAComprar.querySelector(".productos__titulo").innerText;
         const precioDePrograma = elementoAComprar.querySelector(".productos__precio").innerText;
-        console.log(imgDePrograma, nombreDePrograma, precioDePrograma);
-    
         agregarAlCarrito(imgDePrograma,nombreDePrograma,precioDePrograma);
     });
 }
 
+let cantidadBoring = 2;
+let cantidadHatha = 2;
+let cantidadCouch = 2;
+
+
 function agregarAlCarrito(imagen,programa,precio) {
     const newRow = document.createElement("div");
+    const precioSplit = precio.split("$");
+    const precioValor = parseFloat(precioSplit[1]);
     newRow.classList.add("carritoRow");
     newRow.classList.add("itemRow");
+    const idRow = programa.split(" ");
+    newRow.setAttribute("id",`${idRow[0]}`);
+    if(!!document.querySelector(`#${idRow[0]}`)) {
+        switch(idRow[0]) {
+            case "Boring":
+            document.querySelector(`#carritoRow__cantidad--${idRow[0]}`).innerHTML = cantidadBoring;
+            actualizarTotales(cantidadBoring,precioValor);
+            cantidadBoring++;
+            return;
+            case "Hatha":
+            document.querySelector(`#carritoRow__cantidad--${idRow[0]}`).innerHTML = cantidadHatha;
+            actualizarTotales(cantidadHatha,precioValor);
+            cantidadHatha++;
+            return;
+            case "Couch":
+            document.querySelector(`#carritoRow__cantidad--${idRow[0]}`).innerHTML = cantidadCouch;
+            actualizarTotales(cantidadCouch,precioValor);
+            cantidadCouch++;
+            return;  
+        };
+    }
     const contentNewRow = `
         <img class="carritoRow__img" src="${imagen}" alt="">
         <span class="carritoRow__producto">${programa}</span>
         <span class="carritoRow__precio">${precio}</span>
-        <input type="number" name="cantidad" class="carritoRow__cantidad" value="1">
+        <span class="carritoRow__cantidad" id="carritoRow__cantidad--${idRow[0]}">1</span>
         <button id="eliminar${rows_carrito}" type="button" class="carritoRow__eliminar">Eliminar</button>`;
     newRow.innerHTML = contentNewRow;
-    localStorage.setItem("contenido de carrito:",  contentNewRow);
+    localStorage.setItem("contenido de carrito:", contentNewRow);
     carrito.append(newRow);
+    actualizarTotales(1,precioValor);
     quitarTextoVacio();
+   
+    
+    
     // Agregar function de borrar al boton de Eliminar
     let botonEliminar = document.querySelector(`#eliminar${rows_carrito}`);
     botonEliminar.addEventListener("click", eliminarDeCarrito);
     rows_carrito++;
+    cantidadBoring = 2;
+    cantidadHatha = 2;
+    cantidadCouch = 2;
 }
 
 for(let i = 0; i < programasArray.length; i++) {
@@ -104,3 +139,17 @@ eliminarTodo();
 for(let i = 0; i < programasArray.length; i++) {
     clickParaAgregar(document.querySelector(`#carrito--${programasArray[i].alias}`));
 };
+
+// ACTUALIZAR TOTALES
+
+function actualizarTotales(cantidad, precio) {
+    let totales = document.querySelector(".total");
+    const operacion = cantidad * precio;
+    let valorLocal = localStorage.setItem("costo",operacion);
+    if(valorLocal != null) {
+        let costoPrevio =localStorage.getItem("costo");
+        operacion = operacion + costoPrevio;
+    }
+    totales.innerHTML = `TOTAL: $${operacion}`;
+
+}

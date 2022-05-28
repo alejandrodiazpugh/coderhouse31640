@@ -119,3 +119,11 @@ margin-bottom: 2rem;
         color: a.$clrAccent;
     }
 }
+.carrito {
+    display: grid;
+    .total {
+        place-self: start;
+        margin-inline-start: 1rem;
+        margin-block-end: 2rem;
+    }
+}
